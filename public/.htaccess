@@ -1,0 +1,12 @@
+# Arquivo .htaccess para SPA (React/Vite)
+# Redireciona todas as requisições para o index.html, exceto arquivos e diretórios reais
+
+RewriteEngine On
+
+# Redireciona tudo para index.html, exceto arquivos/diretórios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
+
+# Permite CORS para APIs (opcional)
+# Header set Access-Control-Allow-Origin "*" 
