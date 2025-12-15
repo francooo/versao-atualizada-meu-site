@@ -51,9 +51,14 @@ export default function Desenvolvimento() {
           <div className="flex-1">
             <h3 className="text-xl font-bold text-yellow-600 mb-1">Parceiro certificado Uappi</h3>
             <p className="text-gray-700 mb-2">Realizo implantação, personalização e integração de lojas na plataforma Uappi, ideal para quem busca flexibilidade e inovação no ecommerce. Transforme sua ideia em uma loja virtual de sucesso com Uappi.</p>
-            <a href="https://wa.me/5551981220279" target="_blank" rel="noopener noreferrer" className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 mt-2">
-              Falar no WhatsApp
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a href="https://wa.me/5551981220279" target="_blank" rel="noopener noreferrer" className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
+                Falar no WhatsApp
+              </a>
+              <a href="https://uappi.com.br/agencia/af-ecomm/" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
+                Saiba mais sobre a Uappi
+              </a>
+            </div>
           </div>
         </div>
       </div>
