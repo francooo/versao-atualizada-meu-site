@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import unipelLogo from '../assets/unipel-logo.png';
 
 const clients = [
-  { name: 'Cliente 1', logo: 'https://via.placeholder.com/150x80?text=Cliente+1' },
+  { name: 'Unipel Papeis Especiais', logo: unipelLogo },
   { name: 'Cliente 2', logo: 'https://via.placeholder.com/150x80?text=Cliente+2' },
   { name: 'Cliente 3', logo: 'https://via.placeholder.com/150x80?text=Cliente+3' },
   { name: 'Cliente 4', logo: 'https://via.placeholder.com/150x80?text=Cliente+4' },
