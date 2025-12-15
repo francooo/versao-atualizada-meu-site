@@ -38,7 +38,7 @@ export const Header = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8">
-          {['home', 'about', 'services', 'cases', 'process', 'contact'].map((item) => (
+          {['home', 'about', 'services', 'cases', 'clients', 'process', 'contact'].map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}
@@ -48,6 +48,7 @@ export const Header = () => {
               {item === 'about' && 'Sobre'}
               {item === 'services' && 'Serviços'}
               {item === 'cases' && 'Cases'}
+              {item === 'clients' && 'Clientes'}
               {item === 'process' && 'Processo'}
               {item === 'contact' && 'Contato'}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
@@ -78,7 +79,7 @@ export const Header = () => {
           isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}>
           <nav className="flex flex-col p-4 space-y-4">
-            {['home', 'about', 'services', 'cases', 'process', 'contact'].map((item) => (
+            {['home', 'about', 'services', 'cases', 'clients', 'process', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
@@ -89,6 +90,7 @@ export const Header = () => {
                 {item === 'about' && 'Sobre'}
                 {item === 'services' && 'Serviços'}
                 {item === 'cases' && 'Cases'}
+                {item === 'clients' && 'Clientes'}
                 {item === 'process' && 'Processo'}
                 {item === 'contact' && 'Contato'}
               </button>
