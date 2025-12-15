@@ -55,7 +55,7 @@ export default function Desenvolvimento() {
               <a href="https://wa.me/5551981220279" target="_blank" rel="noopener noreferrer" className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
                 Falar no WhatsApp
               </a>
-              <a href="https://uappi.com.br/agencia/af-ecomm/" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
+              <a href="https://uappi.com.br/agencia/af-ecomm/" target="_blank" rel="noopener noreferrer" className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
                 Saiba mais sobre a Uappi
               </a>
             </div>
