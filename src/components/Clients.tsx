@@ -18,6 +18,7 @@ const clients = [
   { name: 'Rio Tubos', logo: riotubosLogo },
   { name: 'Esporte Clube Cruzeiro', logo: cruzeiroLogo },
   { name: 'Morena Rosa', logo: morenarosaLogo },
+  { name: 'Cliente 9', logo: 'https://via.placeholder.com/150x80?text=Cliente+9' },
 ];
 
 export const Clients = () => {
