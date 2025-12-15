@@ -3,12 +3,13 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import unipelLogo from '../assets/unipel-logo.png';
 import melotintasLogo from '../assets/melotintas-logo.png';
 import collingLogo from '../assets/colling-logo.png';
+import brautoLogo from '../assets/brauto-logo.png';
 
 const clients = [
   { name: 'Unipel Papeis Especiais', logo: unipelLogo },
   { name: 'Melo Tintas', logo: melotintasLogo },
   { name: 'Colling Eventos', logo: collingLogo },
-  { name: 'Cliente 4', logo: 'https://via.placeholder.com/150x80?text=Cliente+4' },
+  { name: 'BR Auto Peças', logo: brautoLogo },
   { name: 'Cliente 5', logo: 'https://via.placeholder.com/150x80?text=Cliente+5' },
   { name: 'Cliente 6', logo: 'https://via.placeholder.com/150x80?text=Cliente+6' },
   { name: 'Cliente 7', logo: 'https://via.placeholder.com/150x80?text=Cliente+7' },
