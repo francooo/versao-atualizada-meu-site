@@ -6,6 +6,7 @@ import collingLogo from '../assets/colling-logo.png';
 import brautoLogo from '../assets/brauto-logo.png';
 import rarobrazilLogo from '../assets/rarobrazil-logo.png';
 import riotubosLogo from '../assets/riotubos-logo.png';
+import cruzeiroLogo from '../assets/cruzeiro-logo.png';
 
 const clients = [
   { name: 'Unipel Papeis Especiais', logo: unipelLogo },
@@ -14,7 +15,7 @@ const clients = [
   { name: 'BR Auto Peças', logo: brautoLogo },
   { name: 'Raro Brazil', logo: rarobrazilLogo },
   { name: 'Rio Tubos', logo: riotubosLogo },
-  { name: 'Cliente 7', logo: 'https://via.placeholder.com/150x80?text=Cliente+7' },
+  { name: 'Esporte Clube Cruzeiro', logo: cruzeiroLogo },
   { name: 'Cliente 8', logo: 'https://via.placeholder.com/150x80?text=Cliente+8' },
 ];
 
