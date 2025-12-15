@@ -2,11 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import unipelLogo from '../assets/unipel-logo.png';
 import melotintasLogo from '../assets/melotintas-logo.png';
+import collingLogo from '../assets/colling-logo.png';
 
 const clients = [
   { name: 'Unipel Papeis Especiais', logo: unipelLogo },
   { name: 'Melo Tintas', logo: melotintasLogo },
-  { name: 'Cliente 3', logo: 'https://via.placeholder.com/150x80?text=Cliente+3' },
+  { name: 'Colling Eventos', logo: collingLogo },
   { name: 'Cliente 4', logo: 'https://via.placeholder.com/150x80?text=Cliente+4' },
   { name: 'Cliente 5', logo: 'https://via.placeholder.com/150x80?text=Cliente+5' },
   { name: 'Cliente 6', logo: 'https://via.placeholder.com/150x80?text=Cliente+6' },
