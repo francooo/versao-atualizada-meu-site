@@ -12,19 +12,19 @@ import joanarosaLogo from '../assets/joanarosa-logo.png';
 import organizachatLogo from '../assets/organizachat-logo.png';
 
 const clients = [
-  { name: 'Unipel Papeis Especiais', logo: unipelLogo },
-  { name: 'Melo Tintas', logo: melotintasLogo },
-  { name: 'Colling Eventos', logo: collingLogo },
-  { name: 'BR Auto Peças', logo: brautoLogo },
-  { name: 'Raro Brazil', logo: rarobrazilLogo },
-  { name: 'Rio Tubos', logo: riotubosLogo },
-  { name: 'Esporte Clube Cruzeiro', logo: cruzeiroLogo },
-  { name: 'Morena Rosa', logo: morenarosaLogo },
-  { name: 'Joana Rosa', logo: joanarosaLogo },
-  { name: 'Organiza Chat', logo: organizachatLogo },
-  { name: 'Cliente 11', logo: 'https://via.placeholder.com/150x80?text=Cliente+11' },
-  { name: 'Cliente 12', logo: 'https://via.placeholder.com/150x80?text=Cliente+12' },
-  { name: 'Cliente 13', logo: 'https://via.placeholder.com/150x80?text=Cliente+13' },
+  { name: 'Unipel Papeis Especiais', logo: unipelLogo, url: 'https://unipelpapeisespeciais.com/' },
+  { name: 'Melo Tintas', logo: melotintasLogo, url: '' },
+  { name: 'Colling Eventos', logo: collingLogo, url: '' },
+  { name: 'BR Auto Peças', logo: brautoLogo, url: '' },
+  { name: 'Raro Brazil', logo: rarobrazilLogo, url: '' },
+  { name: 'Rio Tubos', logo: riotubosLogo, url: '' },
+  { name: 'Esporte Clube Cruzeiro', logo: cruzeiroLogo, url: '' },
+  { name: 'Morena Rosa', logo: morenarosaLogo, url: '' },
+  { name: 'Joana Rosa', logo: joanarosaLogo, url: '' },
+  { name: 'Organiza Chat', logo: organizachatLogo, url: '' },
+  { name: 'Cliente 11', logo: 'https://via.placeholder.com/150x80?text=Cliente+11', url: '' },
+  { name: 'Cliente 12', logo: 'https://via.placeholder.com/150x80?text=Cliente+12', url: '' },
+  { name: 'Cliente 13', logo: 'https://via.placeholder.com/150x80?text=Cliente+13', url: '' },
 ];
 
 export const Clients = () => {
@@ -88,19 +88,37 @@ export const Clients = () => {
             className="flex gap-8 overflow-x-auto scrollbar-hide py-4 px-8 scroll-smooth"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {clients.map((client, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 bg-white rounded-xl shadow-md p-6 flex items-center justify-center min-w-[180px] h-[100px] hover:shadow-lg transition-shadow duration-300"
-                data-testid={`card-client-${index}`}
-              >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-            ))}
+            {clients.map((client, index) => {
+              const cardContent = (
+                <div
+                  className="flex-shrink-0 bg-white rounded-xl shadow-md p-6 flex items-center justify-center min-w-[180px] h-[100px] hover:shadow-lg transition-shadow duration-300"
+                  data-testid={`card-client-${index}`}
+                >
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+              );
+
+              return client.url ? (
+                <a
+                  key={index}
+                  href={client.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0"
+                  data-testid={`link-client-${index}`}
+                >
+                  {cardContent}
+                </a>
+              ) : (
+                <div key={index} className="flex-shrink-0">
+                  {cardContent}
+                </div>
+              );
+            })}
           </div>
 
           {canScrollRight && (
