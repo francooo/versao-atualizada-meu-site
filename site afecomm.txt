@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="AF ecomm — Consultoria, desenvolvimento e automação com IA para e-commerce. Transformando negócios com tecnologia desde 2016."/>
+<meta name="keywords" content="e-commerce, consultoria, desenvolvimento, automação, inteligência artificial, loja virtual, shopify, vtex, woocommerce"/>
+<meta property="og:title" content="AF ecomm — Transformando Negócios com Tecnologia"/>
+<meta property="og:description" content="Consultoria, desenvolvimento e automação com IA para e-commerce de alta performance."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://afecomm.com.br"/>
+<title>AF ecomm — Transformando Negócios com Tecnologia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+  :root {
+    --yellow:      #FFD100;
+    --yellow-dark: #E6BC00;
+    --yellow-dim:  rgba(255,209,0,0.10);
+    --yellow-mid:  rgba(255,209,0,0.22);
+    --black:       #0A0A0A;
+    --gray-900:    #111111;
+    --gray-800:    #1A1A1A;
+    --gray-700:    #2A2A2A;
+    --gray-600:    #3A3A3A;
+    --gray-500:    #555555;
+    --gray-400:    #777777;
+    --gray-300:    #AAAAAA;
+    --gray-100:    #F2F2F2;
+    --white:       #FFFFFF;
+  }
+ 
+  html { scroll-behavior: smooth; }
+ 
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+ 
+  /* ─────────────────────────────
+     SCROLLBAR
+  ───────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--gray-700); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--yellow); }
+ 
+  /* ─────────────────────────────
+     NAV
+  ───────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 56px;
+    background: rgba(10,10,10,0.90);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,209,0,0.10);
+    transition: padding 0.3s, background 0.3s;
+  }
+  nav.scrolled {
+    padding: 14px 56px;
+    background: rgba(10,10,10,0.97);
+  }
+ 
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .logo span { color: var(--yellow); }
+ 
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+  .nav-links li a {
+    color: var(--gray-300);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-links li a:hover { color: var(--yellow); }
+ 
+  .nav-cta {
+    background: var(--yellow) !important;
+    color: var(--black) !important;
+    font-weight: 500 !important;
+    padding: 10px 22px !important;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+  .nav-cta:hover { background: var(--yellow-dark) !important; transform: translateY(-1px); color: var(--black) !important; }
+ 
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform 0.25s, opacity 0.25s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+ 
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: var(--gray-900);
+    border-bottom: 1px solid var(--gray-800);
+    padding: 24px 24px 32px;
+    z-index: 999;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    color: var(--gray-300);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gray-800);
+    transition: color 0.2s;
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--yellow); }
+  .mobile-menu .m-cta {
+    background: var(--yellow);
+    color: var(--black) !important;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 8px;
+    padding: 14px !important;
+    border-bottom: none !important;
+    margin-top: 8px;
+  }
+ 
+  /* ─────────────────────────────
+     HERO
+  ───────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 148px 56px 90px;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,209,0,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,209,0,0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, black 30%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, black 30%, transparent 100%);
+    pointer-events: none;
+  }
+ 
+  .hero-glow {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px; height: 500px;
+    background: radial-gradient(ellipse at center, rgba(255,209,0,0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
+ 
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--yellow-dim);
+    border: 1px solid var(--yellow-mid);
+    color: var(--yellow);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 100px;
+    margin-bottom: 36px;
+    width: fit-content;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--yellow);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+ 
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(46px, 7.5vw, 88px);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    max-width: 860px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 .accent { color: var(--yellow); }
+  .hero h1 .outline {
+    -webkit-text-stroke: 2px var(--gray-700);
+    color: transparent;
+  }
+ 
+  .hero-sub {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--gray-300);
+    max-width: 540px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+ 
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+ 
+  .hero-stats {
+    display: flex;
+    gap: 56px;
+    margin-top: 80px;
+    padding-top: 48px;
+    border-top: 1px solid var(--gray-800);
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--yellow);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--gray-500);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+ 
+  /* ─────────────────────────────
+     MARQUEE
+  ───────────────────────────── */
+  .marquee-section {
+    overflow: hidden;
+    border-top: 1px solid var(--gray-800);
+    border-bottom: 1px solid var(--gray-800);
+    padding: 18px 0;
+    background: var(--gray-900);
+  }
+  .marquee-track {
+    display: flex;
+    gap: 52px;
+    width: max-content;
+    animation: marquee 26s linear infinite;
+  }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+  .marquee-item:hover { color: var(--gray-300); }
+  .marquee-dot {
+    width: 5px; height: 5px;
+    background: var(--yellow);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+ 
+  /* ─────────────────────────────
+     SHARED SECTION STYLES
+  ───────────────────────────── */
+  section { padding: 108px 56px; }
+ 
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::before {
+    content: '';
+    width: 20px; height: 1px;
+    background: var(--yellow);
+    display: inline-block;
+  }
+ 
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    margin-bottom: 20px;
+  }
+ 
+  .section-sub {
+    font-size: 16px;
+    color: var(--gray-300);
+    font-weight: 300;
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 60px;
+  }
+ 
+  /* ─────────────────────────────
+     BUTTONS
+  ───────────────────────────── */
+  .btn-primary {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 15px 32px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  }
+  .btn-primary:hover {
+    background: var(--yellow-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(255,209,0,0.25);
+  }
+ 
+  .btn-ghost {
+    display: inline-block;
+    background: transparent;
+    color: var(--gray-300);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 15px 28px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-700);
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--yellow); color: var(--yellow); }
+ 
+  /* ─────────────────────────────
+     SERVIÇOS
+  ───────────────────────────── */
+  .services-section { background: var(--gray-900); }
+ 
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gray-800);
+    border: 1px solid var(--gray-800);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+ 
+  .service-card {
+    background: var(--gray-900);
+    padding: 44px 38px;
+    transition: background 0.25s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+  .service-card:hover { background: var(--gray-800); }
+  .service-card:hover::before { transform: scaleX(1); }
+ 
+  .service-icon {
+    width: 52px; height: 52px;
+    background: var(--yellow-dim);
+    border: 1px solid var(--yellow-mid);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    font-size: 24px;
+    transition: background 0.25s;
+  }
+  .service-card:hover .service-icon { background: rgba(255,209,0,0.16); }
+ 
+  .service-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--gray-700);
+    margin-bottom: 12px;
+  }
+ 
+  .service-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+ 
+  .service-desc {
+    font-size: 14px;
+    color: var(--gray-500);
+    line-height: 1.65;
+    margin-bottom: 28px;
+  }
+ 
+  .service-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--yellow);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.2s, transform 0.2s;
+    font-weight: 500;
+  }
+  .service-card:hover .service-arrow { opacity: 1; transform: translateY(0); }
+ 
+  /* ─────────────────────────────
+     POR QUE NÓS
+  ───────────────────────────── */
+  .why-section { background: var(--black); }
+ 
+  .why-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 88px;
+    align-items: center;
+  }
+ 
+  .why-visual {
+    aspect-ratio: 1 / 1.05;
+    background: var(--gray-900);
+    border-radius: 24px;
+    border: 1px solid var(--gray-800);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(255,209,0,0.04) 0%, transparent 60%),
+      radial-gradient(circle at 80% 20%, rgba(255,209,0,0.07) 0%, transparent 50%);
+    pointer-events: none;
+  }
+ 
+  .why-visual-bg-text {
+    font-family: 'Syne', sans-serif;
+    font-size: 130px;
+    font-weight: 800;
+    color: var(--gray-800);
+    line-height: 1;
+    text-align: center;
+    user-select: none;
+    letter-spacing: -6px;
+  }
+ 
+  .why-visual-badge {
+    position: absolute;
+    bottom: 28px; left: 28px;
+    background: var(--yellow);
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 13px 20px;
+    border-radius: 12px;
+    letter-spacing: -0.01em;
+    z-index: 1;
+    box-shadow: 0 8px 24px rgba(255,209,0,0.3);
+  }
+  .why-visual-badge span {
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    opacity: 0.6;
+    margin-bottom: 2px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+ 
+  .why-visual-lines {
+    position: absolute;
+    top: 28px; right: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    z-index: 1;
+  }
+  .why-visual-lines i {
+    display: block;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--yellow);
+    opacity: 0.7;
+  }
+ 
+  .why-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+ 
+  .why-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--gray-800);
+    transition: padding-left 0.2s;
+  }
+  .why-item:first-child { padding-top: 0; }
+  .why-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .why-item:hover { padding-left: 6px; }
+ 
+  .why-check {
+    width: 30px; height: 30px;
+    background: var(--yellow-dim);
+    border: 1px solid var(--yellow-mid);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: background 0.2s;
+  }
+  .why-item:hover .why-check { background: rgba(255,209,0,0.2); }
+ 
+  .check-svg { width: 13px; height: 13px; stroke: var(--yellow); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+ 
+  .why-item-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 7px;
+    color: var(--white);
+  }
+  .why-item-desc {
+    font-size: 14px;
+    color: var(--gray-500);
+    line-height: 1.65;
+  }
+ 
+  /* ─────────────────────────────
+     PROCESSO
+  ───────────────────────────── */
+  .process-section { background: var(--gray-900); }
+ 
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+    margin-top: 8px;
+  }
+  .process-grid::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: 60px; right: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-700) 20%, var(--gray-700) 80%, transparent);
+  }
+ 
+  .process-step {
+    padding: 0 24px;
+    text-align: center;
+    position: relative;
+  }
+ 
+  .process-num-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+ 
+  .process-num {
+    width: 56px; height: 56px;
+    background: var(--gray-800);
+    border: 1px solid var(--gray-700);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--gray-600);
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
+    position: relative;
+    z-index: 1;
+  }
+  .process-step:hover .process-num {
+    background: var(--yellow);
+    color: var(--black);
+    border-color: var(--yellow);
+  }
+ 
+  .process-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--white);
+  }
+  .process-desc {
+    font-size: 13px;
+    color: var(--gray-500);
+    line-height: 1.6;
+  }
+ 
+  /* ─────────────────────────────
+     CTA BANNER
+  ───────────────────────────── */
+  .cta-section {
+    background: var(--yellow);
+    padding: 90px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: 'AF';
+    position: absolute;
+    right: -20px; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Syne', sans-serif;
+    font-size: 260px;
+    font-weight: 800;
+    color: rgba(0,0,0,0.05);
+    letter-spacing: -10px;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+ 
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+ 
+  .cta-section .section-label { color: rgba(0,0,0,0.45); }
+  .cta-section .section-label::before { background: rgba(0,0,0,0.35); }
+  .cta-section .section-title { color: var(--black); margin-bottom: 0; }
+ 
+  .btn-black {
+    display: inline-block;
+    background: var(--black);
+    color: var(--yellow);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 16px 36px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-black:hover { background: var(--gray-900); transform: translateY(-2px); color: var(--yellow); }
+ 
+  /* ─────────────────────────────
+     DEPOIMENTOS
+  ───────────────────────────── */
+  .testimonials-section { background: var(--black); }
+ 
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+ 
+  .testimonial-card {
+    background: var(--gray-900);
+    border: 1px solid var(--gray-800);
+    border-radius: 18px;
+    padding: 34px 30px;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .testimonial-card:hover {
+    border-color: var(--gray-700);
+    transform: translateY(-4px);
+  }
+ 
+  .testimonial-stars {
+    color: var(--yellow);
+    font-size: 14px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+  }
+ 
+  .testimonial-text {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--gray-300);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+ 
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-800);
+  }
+ 
+  .author-avatar {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--yellow-dim);
+    border: 1px solid var(--yellow-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--yellow);
+    flex-shrink: 0;
+  }
+ 
+  .author-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+  }
+  .author-role {
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+ 
+  /* ─────────────────────────────
+     FAQ
+  ───────────────────────────── */
+  .faq-section { background: var(--gray-900); }
+ 
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 80px;
+    align-items: start;
+  }
+ 
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+ 
+  .faq-item {
+    border-bottom: 1px solid var(--gray-800);
+    overflow: hidden;
+  }
+  .faq-item:first-child { border-top: 1px solid var(--gray-800); }
+ 
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 0;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--gray-300);
+    transition: color 0.2s;
+    user-select: none;
+  }
+  .faq-question:hover { color: var(--white); }
+  .faq-item.open .faq-question { color: var(--yellow); }
+ 
+  .faq-icon {
+    width: 24px; height: 24px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--gray-700);
+    border-radius: 50%;
+    font-size: 16px;
+    color: var(--gray-500);
+    transition: transform 0.3s, border-color 0.2s, color 0.2s;
+    line-height: 1;
+  }
+  .faq-item.open .faq-icon {
+    transform: rotate(45deg);
+    border-color: var(--yellow);
+    color: var(--yellow);
+  }
+ 
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s;
+    font-size: 14px;
+    color: var(--gray-500);
+    line-height: 1.7;
+    padding: 0;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 240px;
+    padding-bottom: 22px;
+  }
+ 
+  /* ─────────────────────────────
+     FOOTER
+  ───────────────────────────── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid var(--gray-800);
+    padding: 64px 56px 36px;
+  }
+ 
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 56px;
+  }
+ 
+  .footer-brand .logo { font-size: 20px; display: inline-flex; }
+  .footer-tagline {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-top: 14px;
+    max-width: 240px;
+    line-height: 1.6;
+  }
+  .footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .social-link {
+    width: 34px; height: 34px;
+    border: 1px solid var(--gray-700);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-500);
+    text-decoration: none;
+    font-size: 14px;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .social-link:hover { border-color: var(--yellow); color: var(--yellow); background: var(--yellow-dim); }
+ 
+  .footer-group h4 {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    margin-bottom: 18px;
+  }
+  .footer-group ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-group ul li a {
+    color: var(--gray-400);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .footer-group ul li a:hover { color: var(--yellow); }
+ 
+  .footer-bottom {
+    border-top: 1px solid var(--gray-800);
+    padding-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-copy { font-size: 13px; color: var(--gray-600); }
+  .footer-legal { display: flex; gap: 24px; }
+  .footer-legal a { font-size: 13px; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+  .footer-legal a:hover { color: var(--gray-400); }
+ 
+  /* ─────────────────────────────
+     ANIMATIONS
+  ───────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+ 
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+ 
+  /* ─────────────────────────────
+     RESPONSIVE
+  ───────────────────────────── */
+  @media (max-width: 1100px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .process-grid::before { display: none; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+  }
+ 
+  @media (max-width: 860px) {
+    nav { padding: 18px 24px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    section, .hero, .cta-section, footer { padding-left: 24px; padding-right: 24px; }
+    .hero { padding-top: 120px; padding-bottom: 64px; }
+    .hero-stats { gap: 32px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-layout { grid-template-columns: 1fr; gap: 44px; }
+    .why-visual { aspect-ratio: 16/9; }
+    .why-visual-bg-text { font-size: 80px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .faq-layout { grid-template-columns: 1fr; gap: 48px; }
+    .process-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-top { grid-template-columns: 1fr; }
+    .cta-section { padding: 72px 24px; }
+  }
+ 
+  @media (max-width: 540px) {
+    .process-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 40px; }
+    .hero-stats { flex-direction: column; gap: 24px; }
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+    nav.scrolled { padding: 12px 24px; }
+  }
+</style>
+</head>
+<body>
+ 
+<!-- ══ NAV ══ -->
+<nav id="main-nav">
+  <a href="#" class="logo">AF<span>ecomm</span></a>
+ 
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#processo">Processo</a></li>
+    <li><a href="#depoimentos">Cases</a></li>
+    <li><a href="#contato" class="nav-cta">Fale Conosco</a></li>
+  </ul>
+ 
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+ 
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#servicos" onclick="closeMobile()">Serviços</a>
+  <a href="#sobre" onclick="closeMobile()">Sobre</a>
+  <a href="#processo" onclick="closeMobile()">Processo</a>
+  <a href="#depoimentos" onclick="closeMobile()">Cases</a>
+  <a href="#contato" onclick="closeMobile()" class="m-cta">Falar com um especialista →</a>
+</div>
+ 
+<!-- ══ HERO ══ -->
+<section class="hero" id="inicio">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+ 
+  <div class="hero-tag">Especialistas em e-commerce</div>
+ 
+  <h1>
+    Transformando<br>
+    <span class="accent">negócios</span> com<br>
+    <span class="outline">tecnologia</span>
+  </h1>
+ 
+  <p class="hero-sub">
+    Consultoria, desenvolvimento e automação com IA para lojas virtuais que querem crescer de verdade — com estratégia, execução e resultado mensurável.
+  </p>
+ 
+  <div class="hero-actions">
+    <a href="#servicos" class="btn-primary">Ver nossos serviços →</a>
+    <a href="#sobre" class="btn-ghost">Como trabalhamos</a>
+  </div>
+ 
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">+150</div>
+      <div class="stat-label">Projetos entregues</div>
+    </div>
+    <div>
+      <div class="stat-num">98%</div>
+      <div class="stat-label">Satisfação dos clientes</div>
+    </div>
+    <div>
+      <div class="stat-num">8 anos</div>
+      <div class="stat-label">Expertise em e-commerce</div>
+    </div>
+    <div>
+      <div class="stat-num">R$ 800k+</div>
+      <div class="stat-label">Em vendas geradas</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ══ MARQUEE ══ -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span>Consultoria em E-commerce</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Desenvolvimento de Lojas Virtuais</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Automação com Inteligência Artificial</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Integrações e APIs</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Marketing Digital e Growth</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Shopify · WooCommerce · VTEX</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Suporte Contínuo com SLA</div>
+    <!-- duplicados para loop -->
+    <div class="marquee-item"><span class="marquee-dot"></span>Consultoria em E-commerce</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Desenvolvimento de Lojas Virtuais</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Automação com Inteligência Artificial</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Integrações e APIs</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Marketing Digital e Growth</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Shopify · WooCommerce · VTEX</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Suporte Contínuo com SLA</div>
+  </div>
+</div>
+ 
+<!-- ══ SERVIÇOS ══ -->
+<section class="services-section" id="servicos">
+  <p class="section-label">O que fazemos</p>
+  <h2 class="section-title reveal">Soluções completas<br>do início ao resultado</h2>
+  <p class="section-sub reveal">Cada serviço foi pensado para resolver um problema real do seu negócio digital, com foco total em performance e crescimento sustentável.</p>
+ 
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-icon">🎯</div>
+      <div class="service-title">Consultoria Estratégica</div>
+      <p class="service-desc">Diagnóstico completo do seu e-commerce com plano de ação orientado a resultados. Identificamos gargalos, oportunidades e o caminho mais rápido para crescer.</p>
+      <div class="service-arrow">Saiba mais →</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-icon">🛠️</div>
+      <div class="service-title">Desenvolvimento de Lojas</div>
+      <p class="service-desc">Criação e otimização de lojas virtuais de alta performance em Shopify, WooCommerce e VTEX — design, velocidade e conversão no centro de tudo.</p>
+      <div class="service-arrow">Saiba mais →</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-icon">🤖</div>
+      <div class="service-title">Automação com IA</div>
+      <p class="service-desc">Agentes de inteligência artificial para atendimento, catálogo, precificação dinâmica e logística. Menos custo operacional, muito mais velocidade e escala.</p>
+      <div class="service-arrow">Saiba mais →</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-icon">🔗</div>
+      <div class="service-title">Integrações e APIs</div>
+      <p class="service-desc">ERPs, marketplaces (Mercado Livre, Amazon, Shopee), meios de pagamento e sistemas logísticos conectados de forma robusta, sem perda de dados.</p>
+      <div class="service-arrow">Saiba mais →</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-icon">📈</div>
+      <div class="service-title">Growth & Performance</div>
+      <p class="service-desc">Estratégias de conversão, SEO técnico, tráfego pago (Google, Meta) e CRO para aumentar sua receita de forma previsível, escalável e mensurável.</p>
+      <div class="service-arrow">Saiba mais →</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-icon">🛡️</div>
+      <div class="service-title">Suporte Contínuo</div>
+      <p class="service-desc">Monitoramento 24/7, manutenção proativa e evolução constante da sua operação digital com SLA garantido e time técnico sempre disponível.</p>
+      <div class="service-arrow">Saiba mais →</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ══ POR QUE NÓS ══ -->
+<section class="why-section" id="sobre">
+  <div class="why-layout">
+    <div class="why-visual reveal">
+      <div class="why-visual-bg-text">AF<br>ec</div>
+      <div class="why-visual-badge">
+        <span>No mercado</span>
+        +8 anos de expertise
+      </div>
+      <div class="why-visual-lines">
+        <i style="width:44px;"></i>
+        <i style="width:30px;"></i>
+        <i style="width:18px;"></i>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="section-label">Por que nos escolher</p>
+      <h2 class="section-title">Resultado, não<br>só entrega</h2>
+      <p class="section-sub" style="margin-bottom: 36px;">Somos obcecados por métricas reais. Nosso trabalho termina quando o seu resultado começa a aparecer.</p>
+      <ul class="why-list">
+        <li class="why-item">
+          <div class="why-check">
+            <svg class="check-svg" viewBox="0 0 14 14"><path d="M2 7l3.5 3.5L12 3"/></svg>
+          </div>
+          <div>
+            <div class="why-item-title">Especialistas em e-commerce</div>
+            <p class="why-item-desc">Foco 100% em comércio digital. Não somos uma agência generalista — cada profissional entende profundamente o mercado onde você opera e os desafios que enfrenta.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">
+            <svg class="check-svg" viewBox="0 0 14 14"><path d="M2 7l3.5 3.5L12 3"/></svg>
+          </div>
+          <div>
+            <div class="why-item-title">Método orientado a dados</div>
+            <p class="why-item-desc">Cada decisão parte de análise real: métricas de conversão, comportamento do cliente e benchmarks do segmento — não de feeling ou modismo.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">
+            <svg class="check-svg" viewBox="0 0 14 14"><path d="M2 7l3.5 3.5L12 3"/></svg>
+          </div>
+          <div>
+            <div class="why-item-title">IA aplicada ao negócio real</div>
+            <p class="why-item-desc">Integramos as mais novas tecnologias de inteligência artificial de forma prática, resolvendo problemas concretos da sua operação — não só conceitos.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">
+            <svg class="check-svg" viewBox="0 0 14 14"><path d="M2 7l3.5 3.5L12 3"/></svg>
+          </div>
+          <div>
+            <div class="why-item-title">Parceria de longo prazo</div>
+            <p class="why-item-desc">Nossos melhores projetos são aqueles em que crescemos junto com o cliente. Priorizamos relações duradouras, não entregas pontuais.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+ 
+<!-- ══ PROCESSO ══ -->
+<section class="process-section" id="processo">
+  <p class="section-label">Como trabalhamos</p>
+  <h2 class="section-title reveal">Da estratégia à execução<br>em 4 etapas</h2>
+  <p class="section-sub reveal">Um processo claro e transparente para que você saiba exatamente o que esperar em cada fase do projeto.</p>
+ 
+  <div class="process-grid reveal">
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <div class="process-num">01</div>
+      </div>
+      <div class="process-title">Diagnóstico</div>
+      <p class="process-desc">Analisamos fundo o seu negócio: métricas, tecnologia, concorrência e oportunidades para montar um diagnóstico preciso.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <div class="process-num">02</div>
+      </div>
+      <div class="process-title">Estratégia</div>
+      <p class="process-desc">Desenhamos o plano de ação com prioridades, entregáveis, timelines e KPIs claros — sem achismo.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <div class="process-num">03</div>
+      </div>
+      <div class="process-title">Execução</div>
+      <p class="process-desc">Nosso time entra em campo: desenvolvimento, integrações, automações e ajustes acontecem com total transparência.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num-wrap">
+        <div class="process-num">04</div>
+      </div>
+      <div class="process-title">Evolução Contínua</div>
+      <p class="process-desc">Monitoramos, medimos e evoluímos. Relatórios periódicos e otimizações constantes para maximizar seus resultados.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- ══ CTA BANNER ══ -->
+<section class="cta-section" id="contato">
+  <div class="cta-inner">
+    <div>
+      <p class="section-label">Pronto para crescer?</p>
+      <h2 class="section-title">Vamos transformar<br>seu e-commerce.</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px; align-items:flex-start;">
+      <a href="https://wa.me/55SEUNUMERO" target="_blank" class="btn-black">Falar no WhatsApp →</a>
+      <span style="font-size:13px; color:rgba(0,0,0,0.45); padding-left:4px;">Resposta em até 2 horas úteis</span>
+    </div>
+  </div>
+</section>
+ 
+<!-- ══ DEPOIMENTOS ══ -->
+<section class="testimonials-section" id="depoimentos">
+  <p class="section-label">O que dizem nossos clientes</p>
+  <h2 class="section-title reveal">Cases reais,<br>resultados reais</h2>
+  <p class="section-sub reveal">Empresas que confiaram na AF ecomm para transformar suas operações digitais e alcançar novos patamares de crescimento.</p>
+ 
+  <div class="testimonials-grid reveal">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"A AF ecomm não entregou só um site — entregou uma máquina de vendas. Em 90 dias vimos nossa taxa de conversão dobrar e o custo por aquisição cair 40%."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">RS</div>
+        <div>
+          <div class="author-name">Ricardo Santos</div>
+          <div class="author-role">CEO · Loja Exclusiva</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"A automação com IA reduziu nossos custos operacionais em 35%. O time deles entende de tecnologia e de negócio ao mesmo tempo — combinação rara."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">CM</div>
+        <div>
+          <div class="author-name">Camila Mendes</div>
+          <div class="author-role">Diretora de Ops · ModaPlus</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Migração completa do nosso ERP integrado ao Shopify sem uma hora de downtime. Profissionalismo e atenção ao detalhe que raramente encontramos no mercado."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">PL</div>
+        <div>
+          <div class="author-name">Pedro Lima</div>
+          <div class="author-role">CTO · TechStore Brasil</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ══ FAQ ══ -->
+<section class="faq-section">
+  <div class="faq-layout">
+    <div class="reveal">
+      <p class="section-label">Dúvidas frequentes</p>
+      <h2 class="section-title">Perguntas<br>que você pode ter</h2>
+      <p class="section-sub" style="margin-bottom:32px;">Ainda tem dúvidas? Fale com nosso time pelo WhatsApp — respondemos rápido.</p>
+      <a href="https://wa.me/55SEUNUMERO" target="_blank" class="btn-primary" style="font-size:14px; padding:13px 26px;">Falar com especialista →</a>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item open">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Em quanto tempo vejo resultados?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Depende do serviço. Em consultoria, as primeiras recomendações chegam em até 2 semanas. Em desenvolvimento, o primeiro MVP fica pronto em 4 a 8 semanas. Para resultados de tráfego e conversão, os primeiros números aparecem em 30 a 60 dias de operação.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Trabalham com qual porte de empresa?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Atendemos desde empreendedores que estão montando sua primeira loja até empresas com operações de médio e grande porte. O que importa é a vontade de crescer com estratégia — e não apenas ferramentas.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Posso contratar só um serviço?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Sim. Você pode contratar consultoria pontual, um projeto de desenvolvimento específico, ou uma automação isolada. Não há obrigação de pacotes fechados — montamos o escopo de acordo com a sua necessidade real.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Quais plataformas vocês dominam?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Shopify, WooCommerce, VTEX, Nuvemshop, Magento, e também plataformas customizadas. Além disso, trabalhamos com integrações nos principais marketplaces brasileiros: Mercado Livre, Amazon, Shopee e Magazine Luiza.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Como funciona o suporte pós-entrega?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Oferecemos planos de suporte contínuo com SLA definido. Você pode escolher entre planos mensais com horas fixas de manutenção e evolução, ou suporte avulso. Nosso time está disponível via WhatsApp, e-mail e sistema de tickets.</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="logo">AF<span>ecomm</span></a>
+      <p class="footer-tagline">Transformando negócios com tecnologia e estratégia desde 2016. Especialistas em e-commerce de alta performance.</p>
+      <div class="footer-social">
+        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-link" aria-label="Instagram">ig</a>
+        <a href="#" class="social-link" aria-label="WhatsApp">wa</a>
+      </div>
+    </div>
+    <div class="footer-group">
+      <h4>Serviços</h4>
+      <ul>
+        <li><a href="#servicos">Consultoria</a></li>
+        <li><a href="#servicos">Desenvolvimento</a></li>
+        <li><a href="#servicos">Automação com IA</a></li>
+        <li><a href="#servicos">Integrações</a></li>
+        <li><a href="#servicos">Growth & Performance</a></li>
+        <li><a href="#servicos">Suporte Contínuo</a></li>
+      </ul>
+    </div>
+    <div class="footer-group">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="#sobre">Sobre nós</a></li>
+        <li><a href="#processo">Como trabalhamos</a></li>
+        <li><a href="#depoimentos">Cases</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-group">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="/cdn-cgi/l/email-protection#46252928322732290627202325292b2b6825292b682434"><span class="__cf_email__" data-cfemail="e3808c8d9782978ca3828586808c8e8ecd808c8ecd8191">[email&#160;protected]</span></a></li>
+        <li><a href="https://wa.me/55SEUNUMERO">WhatsApp</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 AF ecomm. Todos os direitos reservados.</p>
+    <div class="footer-legal">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+      <a href="#">LGPD</a>
+    </div>
+  </div>
+</footer>
+ 
+<!-- ══ SCRIPTS ══ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  /* Nav scroll */
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+ 
+  /* Hamburger */
+  const ham = document.getElementById('hamburger');
+  const mob = document.getElementById('mobile-menu');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mob.classList.toggle('open');
+  });
+  function closeMobile() {
+    ham.classList.remove('open');
+    mob.classList.remove('open');
+  }
+ 
+  /* Reveal on scroll */
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+ 
+  /* FAQ toggle */
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+ 
+  /* Smooth active nav on scroll */
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links li a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(link => {
+      link.style.color = '';
+      if (link.getAttribute('href') === '#' + current) {
+        link.style.color = 'var(--yellow)';
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -6,17 +6,17 @@ import { CheckCircle, Phone, Mail, ArrowRight } from 'lucide-react';
 
 export default function Nuvemshop() {
   return (
-    <>
+    <div className="min-h-screen bg-[#0A0A0A]">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-blue-100">
+      <section className="pt-32 pb-20 bg-[#0A0A0A]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Nuvemshop - <span className="text-blue-600">Faça seu E-commerce</span>
+            <h1 className="font-syne text-4xl md:text-5xl font-bold text-white mb-6">
+              Nuvemshop - <span className="text-[#FFD100]">Faça seu E-commerce</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-[#AAAAAA] mb-8 max-w-3xl mx-auto">
               Conheça a maior plataforma de e-commerce da América Latina e como a AF ecomm pode ajudar você a ter sucesso com esta tecnologia.
             </p>
           </div>
@@ -24,7 +24,7 @@ export default function Nuvemshop() {
       </section>
 
       {/* AF ecomm Silver Partner Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#111111]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <div className="flex justify-center mb-8">
@@ -34,21 +34,21 @@ export default function Nuvemshop() {
                 className="max-w-md w-full h-auto rounded-lg shadow-lg"
               />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              AF ecomm é <span className="text-yellow-500">Parceiro Silver</span> da Nuvemshop
+            <h2 className="font-syne text-3xl md:text-4xl font-bold text-white mb-6">
+              AF ecomm é <span className="text-[#FFD100]">Parceiro Silver</span> da Nuvemshop
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-[#AAAAAA] mb-8">
               Como parceiro certificado Silver da Nuvemshop, oferecemos implementação especializada, 
               customização avançada e suporte completo para sua loja virtual.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:+5551981220279">
-                <Button className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-8 py-4 flex items-center gap-2">
+                <Button className="bg-[#FFD100] hover:bg-[#E6BC00] text-[#0A0A0A] font-semibold px-8 py-4 flex items-center gap-2">
                   <Phone className="w-5 h-5" /> Ligar Agora (51) 98122-0279
                 </Button>
               </a>
               <a href="https://wa.me/5551981220279" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="text-green-600 border-green-500 hover:bg-green-50 font-semibold px-8 py-4 flex items-center gap-2">
+                <Button variant="outline" className="text-[#25D366] border-[#25D366] hover:bg-[#25D366]/10 font-semibold px-8 py-4 flex items-center gap-2">
                   WhatsApp <ArrowRight className="w-5 h-5" />
                 </Button>
               </a>
@@ -58,63 +58,63 @@ export default function Nuvemshop() {
       </section>
 
       {/* About Nuvemshop Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0A0A0A]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
-              Sobre a <span className="text-blue-600">Nuvemshop</span>
+            <h2 className="font-syne text-3xl md:text-4xl font-bold text-center text-white mb-12">
+              Sobre a <span className="text-[#FFD100]">Nuvemshop</span>
             </h2>
             
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white rounded-xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">História da Nuvemshop</h3>
-                <p className="text-gray-600 mb-4">
+              <div className="bg-[#111111] rounded-xl p-8 border border-[#1A1A1A]">
+                <h3 className="font-syne text-2xl font-bold text-white mb-4">História da Nuvemshop</h3>
+                <p className="text-[#AAAAAA] mb-4">
                   Fundada em 2011 na Argentina, a Nuvemshop nasceu com a missão de democratizar o comércio eletrônico na América Latina. 
                   Hoje é umas das grandes plataforma de e-commerce do pais, atendendo mais de 90.000 lojas ativas.
                 </p>
-                <p className="text-gray-600">
+                <p className="text-[#AAAAAA]">
                   Com escritórios no Brasil, Argentina, México e Colômbia, a empresa se consolidou como líder absoluta 
                   em soluções de e-commerce para pequenas e médias empresas.
                 </p>
               </div>
               
-              <div className="bg-white rounded-xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Números Impressionantes</h3>
+              <div className="bg-[#111111] rounded-xl p-8 border border-[#1A1A1A]">
+                <h3 className="font-syne text-2xl font-bold text-white mb-4">Números Impressionantes</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-5 h-5 text-[#FFD100] mr-3" />
                     Mais de 90.000 lojas ativas
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-5 h-5 text-[#FFD100] mr-3" />
                     Presença em 4 países
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-5 h-5 text-[#FFD100] mr-3" />
                     Mais de R$ 8 bilhões em GMV anual
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-5 h-5 text-[#FFD100] mr-3" />
                     Uma das lideres na América Latina
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className="bg-blue-600 rounded-xl p-8 text-white text-center">
-              <h3 className="text-2xl font-bold mb-4">Por que escolher a Nuvemshop?</h3>
+            <div className="bg-[#FFD100] rounded-xl p-8 text-[#0A0A0A] text-center">
+              <h3 className="font-syne text-2xl font-bold mb-4">Por que escolher a Nuvemshop?</h3>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
                   <h4 className="font-semibold mb-2">Facilidade de Uso</h4>
-                  <p className="text-blue-100">Interface intuitiva que permite criar e gerenciar sua loja sem conhecimento técnico.</p>
+                  <p className="text-[#0A0A0A]/80">Interface intuitiva que permite criar e gerenciar sua loja sem conhecimento técnico.</p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Escalabilidade</h4>
-                  <p className="text-blue-100">Plataforma robusta que cresce junto com seu negócio, suportando grandes volumes.</p>
+                  <p className="text-[#0A0A0A]/80">Plataforma robusta que cresce junto com seu negócio, suportando grandes volumes.</p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Integrações</h4>
-                  <p className="text-blue-100">Centenas de apps e integrações para potencializar sua operação de vendas.</p>
+                  <p className="text-[#0A0A0A]/80">Centenas de apps e integrações para potencializar sua operação de vendas.</p>
                 </div>
               </div>
             </div>
@@ -123,97 +123,97 @@ export default function Nuvemshop() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#111111]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
-              Nossos Serviços <span className="text-yellow-500">Nuvemshop</span>
+            <h2 className="font-syne text-3xl md:text-4xl font-bold text-center text-white mb-12">
+              Nossos Serviços <span className="text-[#FFD100]">Nuvemshop</span>
             </h2>
             
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-gray-50 rounded-xl p-8">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">Implementação Completa</h3>
+              <div className="bg-[#0A0A0A] rounded-xl p-8 border border-[#1A1A1A]">
+                <h3 className="font-syne text-xl font-bold text-white mb-4">Implementação Completa</h3>
                 <ul className="space-y-2 mb-6">
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Setup inicial da loja
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Configuração de produtos
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Integração de pagamentos
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Configuração de frete
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-gray-50 rounded-xl p-8">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">Customização Avançada</h3>
+              <div className="bg-[#0A0A0A] rounded-xl p-8 border border-[#1A1A1A]">
+                <h3 className="font-syne text-xl font-bold text-white mb-4">Customização Avançada</h3>
                 <ul className="space-y-2 mb-6">
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Design personalizado
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Funcionalidades exclusivas
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Integrações customizadas
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Otimização para conversão
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-gray-50 rounded-xl p-8">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">Migração de Plataforma</h3>
+              <div className="bg-[#0A0A0A] rounded-xl p-8 border border-[#1A1A1A]">
+                <h3 className="font-syne text-xl font-bold text-white mb-4">Migração de Plataforma</h3>
                 <ul className="space-y-2 mb-6">
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Migração de produtos
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Transferência de clientes
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Preservação de SEO
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Zero tempo de inatividade
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-gray-50 rounded-xl p-8">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">Suporte Contínuo</h3>
+              <div className="bg-[#0A0A0A] rounded-xl p-8 border border-[#1A1A1A]">
+                <h3 className="font-syne text-xl font-bold text-white mb-4">Suporte Contínuo</h3>
                 <ul className="space-y-2 mb-6">
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Atualizações regulares
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Monitoramento de performance
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Suporte técnico especializado
                   </li>
-                  <li className="flex items-center text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-yellow-500 mr-2" />
+                  <li className="flex items-center text-[#AAAAAA]">
+                    <CheckCircle className="w-4 h-4 text-[#FFD100] mr-2" />
                     Consultoria estratégica
                   </li>
                 </ul>
@@ -224,23 +224,23 @@ export default function Nuvemshop() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-yellow-400 to-yellow-500">
+      <section className="py-16 bg-[#FFD100]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="font-syne text-3xl md:text-4xl font-bold text-[#0A0A0A] mb-6">
             Pronto para criar sua loja Nuvemshop?
           </h2>
-          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-[#0A0A0A]/80 text-lg mb-8 max-w-2xl mx-auto">
             Como parceiro Silver certificado, oferecemos implementação especializada e suporte completo 
             para sua loja virtual na maior plataforma de e-commerce da América Latina.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:andrewsfranco93@gmail.com">
-              <Button variant="outline" className="text-yellow-600 border-white bg-white hover:bg-yellow-50 font-semibold px-8 py-4 flex items-center gap-2">
+              <Button variant="outline" className="text-[#0A0A0A] border-[#0A0A0A] bg-white hover:bg-[#0A0A0A] hover:text-[#FFD100] font-semibold px-8 py-4 flex items-center gap-2">
                 <Mail className="w-5 h-5" /> Enviar Email
               </Button>
             </a>
             <a href="tel:+5551981220279">
-              <Button className="bg-white text-yellow-600 hover:bg-yellow-100 font-semibold px-8 py-4 flex items-center gap-2 border border-white">
+              <Button className="bg-[#0A0A0A] text-[#FFD100] hover:bg-[#111111] font-semibold px-8 py-4 flex items-center gap-2 border border-[#0A0A0A]">
                 <Phone className="w-5 h-5" /> Ligar Agora (51) 98122-0279
               </Button>
             </a>
@@ -250,6 +250,6 @@ export default function Nuvemshop() {
 
       <Footer />
       <BackToTop />
-    </>
+    </div>
   );
 }

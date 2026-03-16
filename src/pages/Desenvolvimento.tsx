@@ -7,22 +7,22 @@ import { Link } from 'react-router-dom';
 
 export default function Desenvolvimento() {
   return (
-    <>
+    <div className="min-h-screen bg-[#0A0A0A]">
       <Header />
       {/* Bloco de parceria Nuvemshop */}
-      <div className="container mx-auto px-4 mt-20">
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-6 flex flex-col md:flex-row items-center gap-6 mb-10">
+      <div className="container mx-auto px-4 pt-28">
+        <div className="max-w-2xl mx-auto bg-[#111111] rounded-2xl shadow-lg p-6 flex flex-col md:flex-row items-center gap-6 mb-10 border border-[#1A1A1A]">
           <img src="https://app-insti-cdn.nuvemshop.com.br/site/dist/images/widgets/closing-cta/image-3.webp?v=3ded868" alt="Logo Nuvemshop" className="h-14 w-auto" />
           <div className="flex-1">
-            <h3 className="text-xl font-bold text-yellow-600 mb-1">Parceiro Certificado Nuvemshop</h3>
-            <p className="text-gray-700 mb-2">Sou parceiro certificado da Nuvemshop, a maior plataforma de ecommerce da América Latina. Ofereço implantação, customização e integração de lojas virtuais para você vender mais e crescer com tecnologia de ponta.</p>
+            <h3 className="font-syne text-xl font-bold text-[#FFD100] mb-1">Parceiro Certificado Nuvemshop</h3>
+            <p className="text-[#AAAAAA] mb-2">Sou parceiro certificado da Nuvemshop, a maior plataforma de ecommerce da América Latina. Ofereço implantação, customização e integração de lojas virtuais para você vender mais e crescer com tecnologia de ponta.</p>
             <div className="flex flex-col sm:flex-row gap-3">
               {/* Botão WhatsApp */}
-              <a href="https://wa.me/5551981220279" target="_blank" rel="noopener noreferrer" className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
+              <a href="https://wa.me/5551981220279" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
                 Falar no WhatsApp
               </a>
               {/* Link para página detalhada */}
-              <Link to="/servicos/desenvolvimento/nuvemshop" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
+              <Link to="/servicos/desenvolvimento/nuvemshop" className="inline-block bg-[#FFD100] hover:bg-[#E6BC00] text-[#0A0A0A] font-semibold px-6 py-2 rounded-full transition-all duration-300">
                 Saiba mais sobre Nuvemshop
               </Link>
             </div>
@@ -32,12 +32,12 @@ export default function Desenvolvimento() {
 
       {/* Bloco de parceria Linx */}
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-6 flex flex-col md:flex-row items-center gap-6 mb-10">
+        <div className="max-w-2xl mx-auto bg-[#111111] rounded-2xl shadow-lg p-6 flex flex-col md:flex-row items-center gap-6 mb-10 border border-[#1A1A1A]">
           <img src="https://www.linx.com.br/app/themes/linx/assets/crystals/static/logo.png" alt="Logo Linx" className="h-14 w-auto" />
           <div className="flex-1">
-            <h3 className="text-xl font-bold text-yellow-600 mb-1">Parceiro certificado em Linx Commerce</h3>
-            <p className="text-gray-700 mb-2">Atuo com implantação, integração e customização de lojas virtuais na plataforma Linx Commerce, referência em soluções robustas para grandes operações de ecommerce no Brasil. Conte com expertise para potencializar sua loja Linx.</p>
-            <a href="https://wa.me/5551981220279" target="_blank" rel="noopener noreferrer" className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 mt-2">
+            <h3 className="font-syne text-xl font-bold text-[#FFD100] mb-1">Parceiro certificado em Linx Commerce</h3>
+            <p className="text-[#AAAAAA] mb-2">Atuo com implantação, integração e customização de lojas virtuais na plataforma Linx Commerce, referência em soluções robustas para grandes operações de ecommerce no Brasil. Conte com expertise para potencializar sua loja Linx.</p>
+            <a href="https://wa.me/5551981220279" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold px-6 py-2 rounded-full transition-all duration-300 mt-2">
               Falar no WhatsApp
             </a>
           </div>
@@ -46,16 +46,16 @@ export default function Desenvolvimento() {
 
       {/* Bloco de parceria Uappi (Wapstore) */}
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-6 flex flex-col md:flex-row items-center gap-6 mb-10">
+        <div className="max-w-2xl mx-auto bg-[#111111] rounded-2xl shadow-lg p-6 flex flex-col md:flex-row items-center gap-6 mb-10 border border-[#1A1A1A]">
           <img src="https://allomni.com.br/wp-content/uploads/2024/08/allomni-ecommerce-partner-tech-ferramentas-uappi.png" alt="Logo Uappi" className="h-14 w-auto" />
           <div className="flex-1">
-            <h3 className="text-xl font-bold text-yellow-600 mb-1">Parceiro certificado Uappi</h3>
-            <p className="text-gray-700 mb-2">Realizo implantação, personalização e integração de lojas na plataforma Uappi, ideal para quem busca flexibilidade e inovação no ecommerce. Transforme sua ideia em uma loja virtual de sucesso com Uappi.</p>
+            <h3 className="font-syne text-xl font-bold text-[#FFD100] mb-1">Parceiro certificado Uappi</h3>
+            <p className="text-[#AAAAAA] mb-2">Realizo implantação, personalização e integração de lojas na plataforma Uappi, ideal para quem busca flexibilidade e inovação no ecommerce. Transforme sua ideia em uma loja virtual de sucesso com Uappi.</p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href="https://wa.me/5551981220279" target="_blank" rel="noopener noreferrer" className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
+              <a href="https://wa.me/5551981220279" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
                 Falar no WhatsApp
               </a>
-              <a href="https://uappi.com.br/agencia/af-ecomm/" target="_blank" rel="noopener noreferrer" className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
+              <a href="https://uappi.com.br/agencia/af-ecomm/" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#FFD100] hover:bg-[#E6BC00] text-[#0A0A0A] font-semibold px-6 py-2 rounded-full transition-all duration-300">
                 Saiba mais sobre a Uappi
               </a>
             </div>
@@ -86,6 +86,6 @@ export default function Desenvolvimento() {
       />
       <Footer />
       <BackToTop />
-    </>
+    </div>
   );
-} 
+}

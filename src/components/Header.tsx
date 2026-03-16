@@ -1,15 +1,26 @@
-
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 60);
+
+      // Update active section based on scroll position
+      const sections = document.querySelectorAll('section[id]');
+      let current = '';
+      sections.forEach((section) => {
+        const htmlSection = section as HTMLElement;
+        const sectionTop = htmlSection.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id') || '';
+        }
+      });
+      setActiveSection(current);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -24,87 +35,102 @@ export const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const navLinks = [
+    { id: 'servicos', label: 'Serviços' },
+    { id: 'sobre', label: 'Sobre' },
+    { id: 'processo', label: 'Processo' },
+    { id: 'depoimentos', label: 'Cases' },
+  ];
+
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-2' : 'bg-transparent py-4'
-      }`}
-    >
-      <div className="container mx-auto px-4 flex items-center justify-between">
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between transition-all duration-300 ${
+          isScrolled
+            ? 'bg-[#0A0A0A]/97 py-3.5 px-14'
+            : 'bg-[#0A0A0A]/90 py-5 px-14'
+        } backdrop-blur-xl border-b border-[#FFD100]/10`}
+      >
         {/* Logo */}
-        <Link to="/" className="text-2xl md:text-3xl font-bold text-yellow-500 hover:scale-105 transition-transform duration-300 cursor-pointer">
-          AF<span className="text-gray-800">ecomm</span>
+        <Link
+          to="/"
+          className="font-syne font-extrabold text-[22px] tracking-[-0.5px] text-white no-underline flex items-center gap-0.5 hover:opacity-80 transition-opacity"
+        >
+          AF<span className="text-[#FFD100]">ecomm</span>
         </Link>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-8">
-          {['home', 'about', 'services', 'cases', 'clients', 'process', 'contact'].map((item) => (
-            <button
-              key={item}
-              onClick={() => scrollToSection(item)}
-              className="text-gray-700 hover:text-yellow-500 font-medium transition-colors duration-300 relative group"
-            >
-              {item === 'home' && 'Início'}
-              {item === 'about' && 'Sobre'}
-              {item === 'services' && 'Serviços'}
-              {item === 'cases' && 'Cases'}
-              {item === 'clients' && 'Clientes'}
-              {item === 'process' && 'Processo'}
-              {item === 'contact' && 'Contato'}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
-            </button>
-          ))}
-        </nav>
-
-        {/* CTA Button Desktop */}
-        <button 
-          onClick={() => scrollToSection('contact')}
-          className="hidden md:block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-        >
-          Solicite uma Consultoria
-        </button>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-gray-700 p-3 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          style={{ minHeight: 44, minWidth: 44 }}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
-        >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-
-        {/* Mobile Menu */}
-        <div className={`absolute top-full left-0 right-0 bg-white shadow-lg md:hidden transition-all duration-300 border-b border-yellow-100 z-40 ${
-          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}>
-          <nav className="flex flex-col p-4 space-y-4">
-            {['home', 'about', 'services', 'cases', 'clients', 'process', 'contact'].map((item) => (
+        <ul className="hidden md:flex items-center gap-9 list-none m-0 p-0">
+          {navLinks.map((link) => (
+            <li key={link.id}>
               <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className="text-gray-800 hover:text-yellow-500 font-medium transition-colors duration-300 text-left py-3 px-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                style={{ minHeight: 44, fontSize: 18 }}
+                onClick={() => scrollToSection(link.id)}
+                className={`text-sm font-normal tracking-wide transition-colors duration-200 bg-transparent border-none cursor-pointer ${
+                  activeSection === link.id ? 'text-[#FFD100]' : 'text-[#AAAAAA] hover:text-[#FFD100]'
+                }`}
               >
-                {item === 'home' && 'Início'}
-                {item === 'about' && 'Sobre'}
-                {item === 'services' && 'Serviços'}
-                {item === 'cases' && 'Cases'}
-                {item === 'clients' && 'Clientes'}
-                {item === 'process' && 'Processo'}
-                {item === 'contact' && 'Contato'}
+                {link.label}
               </button>
-            ))}
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition-all duration-300 text-center mt-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              style={{ minHeight: 44, fontSize: 18 }}
+            </li>
+          ))}
+          <li>
+            <button
+              onClick={() => scrollToSection('contato')}
+              className="bg-[#FFD100] text-[#0A0A0A] font-medium text-sm py-2.5 px-5.5 rounded-md transition-all duration-200 hover:bg-[#E6BC00] hover:-translate-y-0.5 border-none cursor-pointer"
             >
-              Solicite uma Consultoria
+              Fale Conosco
             </button>
-          </nav>
-        </div>
+          </li>
+        </ul>
+
+        {/* Hamburger Menu Button */}
+        <button
+          className={`md:hidden flex flex-col gap-1.5 cursor-pointer bg-transparent border-none p-1 ${
+            isMobileMenuOpen ? 'open' : ''
+          }`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Menu"
+        >
+          <span
+            className={`block w-6 h-0.5 bg-white rounded transition-all duration-250 ${
+              isMobileMenuOpen ? 'translate-y-[7px] rotate-45' : ''
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-white rounded transition-all duration-250 ${
+              isMobileMenuOpen ? 'opacity-0' : ''
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-white rounded transition-all duration-250 ${
+              isMobileMenuOpen ? '-translate-y-[7px] -rotate-45' : ''
+            }`}
+          ></span>
+        </button>
+      </nav>
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed top-16 left-0 right-0 bg-[#111111] border-b border-[#1A1A1A] py-6 px-6 pb-8 z-[999] flex-col gap-5 md:hidden transition-all duration-300 ${
+          isMobileMenuOpen ? 'flex' : 'hidden'
+        }`}
+      >
+        {navLinks.map((link) => (
+          <button
+            key={link.id}
+            onClick={() => scrollToSection(link.id)}
+            className="text-[#AAAAAA] no-underline text-base font-normal py-2 border-b border-[#1A1A1A] transition-colors text-left w-full hover:text-[#FFD100]"
+          >
+            {link.label}
+          </button>
+        ))}
+        <button
+          onClick={() => scrollToSection('contato')}
+          className="bg-[#FFD100] text-[#0A0A0A] font-semibold text-center rounded-lg py-3.5 !border-none mt-2 hover:bg-[#E6BC00] transition-colors"
+        >
+          Falar com um especialista →
+        </button>
       </div>
-    </header>
+    </>
   );
 };

@@ -1,50 +1,106 @@
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const services = [
+    { label: 'Consultoria', href: '#servicos' },
+    { label: 'Desenvolvimento', href: '#servicos' },
+    { label: 'Automação com IA', href: '#servicos' },
+    { label: 'Integrações', href: '#servicos' },
+    { label: 'Growth & Performance', href: '#servicos' },
+    { label: 'Suporte Contínuo', href: '#servicos' },
+  ];
+
+  const company = [
+    { label: 'Sobre nós', href: '#sobre' },
+    { label: 'Como trabalhamos', href: '#processo' },
+    { label: 'Cases', href: '#depoimentos' },
+    { label: 'Blog', href: '#' },
+  ];
+
+  const contact = [
+    { label: 'contato@afecomm.com.br', href: 'mailto:contato@afecomm.com.br' },
+    { label: 'WhatsApp', href: 'https://wa.me/5551981220279' },
+    { label: 'LinkedIn', href: '#' },
+    { label: 'Instagram', href: '#' },
+  ];
+
   return (
-    <footer className="bg-gray-900 text-white py-8 sm:py-12">
-      <div className="container mx-auto px-2 sm:px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
-          {/* Company Info */}
-          <div className="md:col-span-2 mb-6 md:mb-0">
-            <div className="text-2xl sm:text-3xl font-bold text-yellow-500 mb-3 sm:mb-4">
-              AF<span className="text-white">ecomm</span>
-            </div>
-            <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-              Transformamos negócios através da tecnologia, oferecendo soluções 
-              inovadoras para ecommerce que geram resultados extraordinários.
+    <footer className="bg-[#0A0A0A] border-t border-[#1A1A1A] pt-16 pb-9 px-14">
+      <div className="max-w-[1400px] mx-auto">
+        {/* Footer Top */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-10 mb-14">
+          {/* Brand */}
+          <div>
+            <Link
+              to="/"
+              className="font-syne font-extrabold text-xl text-white no-underline inline-flex items-center gap-0.5 hover:opacity-80 transition-opacity"
+            >
+              AF<span className="text-[#FFD100]">ecomm</span>
+            </Link>
+            <p className="text-[13px] text-[#555555] mt-3.5 max-w-[240px] leading-[1.6]">
+              Transformando negócios com tecnologia e estratégia desde 2016. Especialistas em e-commerce de alta performance.
             </p>
-            <div className="flex space-x-3 sm:space-x-4">
-              {[
-                { name: 'LinkedIn', emoji: '💼' },
-                { name: 'Instagram', emoji: '📷' },
-                { name: 'Facebook', emoji: '📘' },
-                { name: 'WhatsApp', emoji: '💬' }
-              ].map((social, index) => (
-                <button
-                  key={index}
-                  className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-yellow-500 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                  aria-label={social.name}
-                >
-                  <span className="text-base sm:text-lg">{social.emoji}</span>
-                </button>
-              ))}
+            <div className="flex gap-3 mt-6">
+              <a
+                href="#"
+                className="w-8.5 h-8.5 border border-[#2A2A2A] rounded-lg flex items-center justify-center text-[#555555] no-underline text-sm transition-all duration-200 hover:border-[#FFD100] hover:text-[#FFD100] hover:bg-[rgba(255,209,0,0.10)]"
+                aria-label="LinkedIn"
+              >
+                in
+              </a>
+              <a
+                href="#"
+                className="w-8.5 h-8.5 border border-[#2A2A2A] rounded-lg flex items-center justify-center text-[#555555] no-underline text-sm transition-all duration-200 hover:border-[#FFD100] hover:text-[#FFD100] hover:bg-[rgba(255,209,0,0.10)]"
+                aria-label="Instagram"
+              >
+                ig
+              </a>
+              <a
+                href="https://wa.me/5551981220279"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8.5 h-8.5 border border-[#2A2A2A] rounded-lg flex items-center justify-center text-[#555555] no-underline text-sm transition-all duration-200 hover:border-[#FFD100] hover:text-[#FFD100] hover:bg-[rgba(255,209,0,0.10)]"
+                aria-label="WhatsApp"
+              >
+                wa
+              </a>
             </div>
           </div>
 
           {/* Services */}
-          <div className="mb-6 md:mb-0">
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-yellow-500">Serviços</h3>
-            <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
-              {[
-                'Consultoria em Ecommerce',
-                'Desenvolvimento Web',
-                'Sistemas com IA',
-                'Business Intelligence',
-                'Automação de Processos'
-              ].map((service, index) => (
+          <div>
+            <h4 className="text-[11px] font-medium tracking-[0.12em] uppercase text-[#3A3A3A] mb-4.5">
+              Serviços
+            </h4>
+            <ul className="list-none flex flex-col gap-3">
+              {services.map((item, index) => (
                 <li key={index}>
-                  <a href="#services" className="text-gray-400 hover:text-yellow-500 transition-colors duration-300">
-                    {service}
+                  <a
+                    href={item.href}
+                    className="text-[#777777] no-underline text-sm transition-colors duration-200 hover:text-[#FFD100]"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="text-[11px] font-medium tracking-[0.12em] uppercase text-[#3A3A3A] mb-4.5">
+              Empresa
+            </h4>
+            <ul className="list-none flex flex-col gap-3">
+              {company.map((item, index) => (
+                <li key={index}>
+                  <a
+                    href={item.href}
+                    className="text-[#777777] no-underline text-sm transition-colors duration-200 hover:text-[#FFD100]"
+                  >
+                    {item.label}
                   </a>
                 </li>
               ))}
@@ -53,38 +109,42 @@ export const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-yellow-500">Contato</h3>
-            <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm">
-              <div className="flex items-center space-x-2 sm:space-x-3">
-                <span>📧</span>
-                <span className="text-gray-400">contato@afecomm.com.br</span>
-              </div>
-              <div className="flex items-center space-x-2 sm:space-x-3">
-                <span>📱</span>
-                <a
-                  href="https://api.whatsapp.com/send/?phone=5551981220279&text=sejabemvindo&type=phone_number&app_absent=0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-yellow-500 transition-colors duration-300"
-                >
-                  (51) 98122-0279
-                </a>
-              </div>
-              <div className="flex items-center space-x-2 sm:space-x-3">
-                <span>📍</span>
-                <span className="text-gray-400">Porto Alegre, RS</span>
-              </div>
-            </div>
+            <h4 className="text-[11px] font-medium tracking-[0.12em] uppercase text-[#3A3A3A] mb-4.5">
+              Contato
+            </h4>
+            <ul className="list-none flex flex-col gap-3">
+              {contact.map((item, index) => (
+                <li key={index}>
+                  <a
+                    href={item.href}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="text-[#777777] no-underline text-sm transition-colors duration-200 hover:text-[#FFD100]"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center">
-          <p className="text-gray-400 text-xs sm:text-sm">
-            © 2024 AF ecomm. Todos os direitos reservados. 
-            <span className="text-yellow-500"> Transformando negócios através da tecnologia.</span>
-            <br />
-            <span className="text-gray-300 font-semibold">CNPJ: 60.311.539/0001-93</span>
+        {/* Footer Bottom */}
+        <div className="border-t border-[#1A1A1A] pt-7 flex items-center justify-between flex-wrap gap-3">
+          <p className="text-[13px] text-[#3A3A3A]">
+            © {currentYear} AF ecomm. Todos os direitos reservados.
           </p>
+          <div className="flex gap-6">
+            <a href="#" className="text-[13px] text-[#3A3A3A] no-underline transition-colors duration-200 hover:text-[#777777]">
+              Política de Privacidade
+            </a>
+            <a href="#" className="text-[13px] text-[#3A3A3A] no-underline transition-colors duration-200 hover:text-[#777777]">
+              Termos de Uso
+            </a>
+            <a href="#" className="text-[13px] text-[#3A3A3A] no-underline transition-colors duration-200 hover:text-[#777777]">
+              LGPD
+            </a>
+          </div>
         </div>
       </div>
     </footer>
